@@ -37,6 +37,10 @@ add_dependencies(${PROJECT_NAME}_nodelet ${PROJECT_NAME}_gencfg)
 
 target_link_libraries(${PROJECT_NAME}_nodelet ${catkin_LIBRARIES} ${yaml-cpp_LIBRARIES})
 
+install(PROGRAMS
+  src/throttle_interpolator.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 install(TARGETS ${PROJECT_NAME}_nodelet
         DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 )
@@ -50,5 +54,11 @@ install(DIRECTORY launch
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 install(DIRECTORY param
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+install(DIRECTORY cfg
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+install(DIRECTORY .settings
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
