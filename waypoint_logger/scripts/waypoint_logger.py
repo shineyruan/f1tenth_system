@@ -14,7 +14,7 @@ rospack = rospkg.RosPack()
 particle_filter_pkg_path = rospack.get_path("particle_filter")
 waypoint_dir = os.path.join(particle_filter_pkg_path, "csv")
 if not os.path.exists(waypoint_dir):
-  os.makedirs(waypoint_dir, exist_ok=True)
+  os.makedirs(waypoint_dir)
 file = open(os.path.join(waypoint_dir, "waypoint.csv"), 'w')
 
 
